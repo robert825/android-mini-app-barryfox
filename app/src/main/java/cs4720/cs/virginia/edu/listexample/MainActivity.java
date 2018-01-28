@@ -10,6 +10,7 @@ import android.view.ViewParent;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.design.widget.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         // Set layout manager to position the items
         rvContacts.setLayoutManager(new LinearLayoutManager(this));
         // That's all!
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
     }
 
     // Called when you tap the Add Contact button
