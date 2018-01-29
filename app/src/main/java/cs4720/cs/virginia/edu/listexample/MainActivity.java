@@ -1,5 +1,6 @@
 package cs4720.cs.virginia.edu.listexample;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewParent;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,5 +69,16 @@ public class MainActivity extends AppCompatActivity {
         Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
         // Make Toast
         Toast.makeText(this, "Sending message to " + currentItem.getText().toString(), Toast.LENGTH_LONG).show();
+    }
+
+    public void toggle_checked(View view) {
+        CheckedTextView currentItem = (CheckedTextView)view;
+        //Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
+        // Make Toas
+        Drawable d = new Drawable();
+        Toast.makeText(this, "Congrats! You completed an activity " , Toast.LENGTH_LONG).show();
+        if (!currentItem.isChecked()){
+            currentItem.setCheckMarkDrawable();
+        }
     }
 }
