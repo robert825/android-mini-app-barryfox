@@ -29,13 +29,13 @@
         android:text="Add Contact"
         android:id="@+id/addContactButton"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/rvContacts"
-        android:onClick="addContact"/>
+        android:layout_alignEnd="@+id/rvBucketLists"
+        android:onClick="addBuck"/>
 
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvContacts"
+        android:id="@+id/rvBucketLists"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
@@ -52,7 +52,7 @@
         android:layout_marginStart="307dp"
         android:layout_marginTop="158dp"
         android:clickable="true"
-        android:onClick="addContact"
+        android:onClick="addBucketList"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 

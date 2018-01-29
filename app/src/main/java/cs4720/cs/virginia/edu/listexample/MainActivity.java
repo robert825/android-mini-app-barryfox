@@ -11,54 +11,57 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.design.widget.FloatingActionButton;
-
+import java.util.Date;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Contact> contacts;
+    ArrayList<BucketItem> BucketList;
     EditText nameField;
-    RecyclerView rvContacts;
+    RecyclerView rvBucketLists;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Lookup the recyclerview in activity layout
-        rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
+//
+//        // Lookup the recyclerview in activity layout
+        rvBucketLists = (RecyclerView) findViewById(R.id.rvBucketLists);
         nameField = (EditText)findViewById(R.id.personName);
+//
+//        // Initialize BucketLists
+        BucketList = BucketItem.createInitialBucketList();
 
-        // Initialize contacts
-        contacts = Contact.createContactsList(1);
-        // Create adapter passing in the sample user data
-        ContactsAdapter adapter = new ContactsAdapter(this, contacts);
-        // Attach the adapter to the recyclerview to populate items
-        rvContacts.setAdapter(adapter);
-        // Set layout manager to position the items
-        rvContacts.setLayoutManager(new LinearLayoutManager(this));
-        // That's all!
-
+//        // Create adapter passing in the sample user data
+        BucketListAdapter adapter = new BucketListAdapter(this, BucketList);
+        System.out.println(adapter.toString());
+        System.out.println(BucketList.toString());
+//        // Attach the adapter to the recyclerview to populate items
+        rvBucketLists.setAdapter(adapter);
+//        // Set layout manager to position the items
+        rvBucketLists.setLayoutManager(new LinearLayoutManager(this));
+//        // That's all!
+//
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
     }
 
-    // Called when you tap the Add Contact button
-    public void addContact(View view) {
+    // Called when you tap the Add BucketList button
+    public void addBucketList(View view) {
         // Make sure it is a name
         if(nameField.getText().toString() != null && !nameField.getText().toString().equals("")) {
             // Log the action
-            Log.d("ListExample", "addContact " + nameField.getText().toString());
-            // Make a new contact
-            contacts.add(new Contact(nameField.getText().toString(), true));
+            Log.d("ListExample", "addBucketList " + nameField.getText().toString());
+            // Make a new BucketList
+            BucketList.add(new BucketItem(nameField.getText().toString(), "description coming soon", 0.0, 0.1, new Date(1220227200)));
             // Get the adapter that manages the data set and let it know something new was added
-            rvContacts.getAdapter().notifyDataSetChanged();
+            rvBucketLists.getAdapter().notifyDataSetChanged();
             // Blank the name field
             nameField.setText("");
         }
     }
 
-    // Called tapping on an online contact
+    // Called tapping on an online BucketList
     public void sendMessage(View view) {
         TextView currentItem = (TextView)view;
         Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());

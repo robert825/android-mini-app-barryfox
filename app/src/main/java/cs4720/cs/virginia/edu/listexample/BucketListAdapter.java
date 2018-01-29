@@ -11,8 +11,8 @@ import java.util.List;
 
 // Create the basic adapter extending from RecyclerView.Adapter
 // Note that we specify the custom ViewHolder which gives us access to our views
-public class ContactsAdapter extends
-        RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
+public class BucketListAdapter extends
+        RecyclerView.Adapter<BucketListAdapter.ViewHolder> {
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
@@ -28,19 +28,19 @@ public class ContactsAdapter extends
             // to access the context from any ViewHolder instance.
             super(itemView);
 
-            nameTextView = (TextView) itemView.findViewById(R.id.contact_name);
+            nameTextView = (TextView) itemView.findViewById(R.id.BucketList_name);
 
         }
     }
 
-    // Store a member variable for the contacts
-    private List<Contact> mContacts;
+    // Store a member variable for the BucketLists
+    private List<BucketItem> mBucketLists;
     // Store the context for easy access
     private Context mContext;
 
-    // Pass in the contact array into the constructor
-    public ContactsAdapter(Context context, List<Contact> contacts) {
-        mContacts = contacts;
+    // Pass in the BucketList array into the constructor
+    public BucketListAdapter(Context context, List<BucketItem> BucketLists) {
+        mBucketLists = BucketLists;
         mContext = context;
     }
 
@@ -51,39 +51,40 @@ public class ContactsAdapter extends
 
     // Usually involves inflating a layout from XML and returning the holder
     @Override
-    public ContactsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BucketListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.item_contact, parent, false);
+        View BucketListView = inflater.inflate(R.layout.item_contact, parent, false);
 
         // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(contactView);
+        ViewHolder viewHolder = new ViewHolder(BucketListView);
         return viewHolder;
     }
 
     // Involves populating data into the item through holder
     @Override
-    public void onBindViewHolder(ContactsAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(BucketListAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        Contact contact = mContacts.get(position);
+        BucketItem BucketList = mBucketLists.get(position);
 
         // Set item views based on your views and data model
         TextView textView = viewHolder.nameTextView;
-        textView.setText(contact.getName());
-        if(!contact.isOnline()) {
-            textView.setClickable(false);
-            textView.setActivated(false);
-            textView.setEnabled(false);
-
-        }
+        System.out.println(BucketList.getName());
+        textView.setText(BucketList.getName());
+//        if(!BucketList.isOnline()) {
+//            textView.setClickable(false);
+//            textView.setActivated(false);
+//            textView.setEnabled(false);
+//
+//        }
 
     }
 
     // Returns the total count of items in the list
     @Override
     public int getItemCount() {
-        return mContacts.size();
+        return mBucketLists.size();
     }
 }
