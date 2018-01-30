@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckedTextView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class BucketListAdapter extends
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
-        public TextView nameTextView;
+        public CheckedTextView nameTextView;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
@@ -28,7 +29,7 @@ public class BucketListAdapter extends
             // to access the context from any ViewHolder instance.
             super(itemView);
 
-            nameTextView = (TextView) itemView.findViewById(R.id.BucketList_name);
+            nameTextView = (CheckedTextView) itemView.findViewById(R.id.BucketList_name);
 
         }
     }
@@ -70,7 +71,7 @@ public class BucketListAdapter extends
         BucketItem BucketList = mBucketLists.get(position);
 
         // Set item views based on your views and data model
-        TextView textView = viewHolder.nameTextView;
+        CheckedTextView textView = viewHolder.nameTextView;
         System.out.println(BucketList.getName());
         textView.setText(BucketList.getName());
 //        if(!BucketList.isOnline()) {
