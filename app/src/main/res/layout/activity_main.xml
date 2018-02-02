@@ -47,10 +47,8 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="400dp"
-        android:layout_marginBottom="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/rvBucketLists"
         android:clickable="true"
         android:onClick="addBucketList"
 

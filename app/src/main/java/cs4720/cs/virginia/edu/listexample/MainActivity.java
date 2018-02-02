@@ -74,11 +74,10 @@ public class MainActivity extends AppCompatActivity {
     public void toggle_checked(View view) {
         CheckedTextView currentItem = (CheckedTextView)view;
         //Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
-        // Make Toas
-        Drawable d = new Drawable();
+        // Make Toast
         Toast.makeText(this, "Congrats! You completed an activity " , Toast.LENGTH_LONG).show();
-        if (!currentItem.isChecked()){
-            currentItem.setCheckMarkDrawable();
-        }
+//        if (!currentItem.isChecked()){
+//            currentItem.setCheckMarkDrawable();
+//        }
     }
 }
