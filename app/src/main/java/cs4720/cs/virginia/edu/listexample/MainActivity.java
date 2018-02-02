@@ -15,6 +15,8 @@ import android.widget.Toast;
 import android.support.design.widget.FloatingActionButton;
 import java.util.Date;
 import java.util.ArrayList;
+import android.content.Intent;
+import android.app.Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
             nameField.setText("");
         }
     }
+
+
+    public void goToAddPage(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, AddActivity.class);
+        startActivity(intent);
+
+    }
+
 
     // Called tapping on an online BucketList
     public void sendMessage(View view) {
