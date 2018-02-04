@@ -19,7 +19,7 @@ import android.content.Intent;
 import android.app.Activity;
 
 public class MainActivity extends AppCompatActivity {
-
+    //public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     ArrayList<BucketItem> BucketList;
     EditText nameField;
     RecyclerView rvBucketLists;
@@ -35,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
 //
 //        // Initialize BucketLists
         BucketList = BucketItem.createInitialBucketList();
+        Intent intent = getIntent();
+        try {
+            String[] message = intent.getStringArrayExtra(AddActivity.EXTRA_MESSAGE);
+            System.out.println(message[0]);
+            System.out.println(message[3]);
+            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), new Date(1220227200));
+            BucketList.add(b);
+        } catch (NullPointerException n) {
+            System.out.println("Error");
+        }
 
 //        // Create adapter passing in the sample user data
         BucketListAdapter adapter = new BucketListAdapter(this, BucketList);
