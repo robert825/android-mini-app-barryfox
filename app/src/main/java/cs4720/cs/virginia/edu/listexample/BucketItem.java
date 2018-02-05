@@ -25,11 +25,6 @@ public class BucketItem {
     public Date getDate() {
         return mdueDate;
     }
-    public String getDescription() {
-        return mDescription;
-    }
-    public double getLat() { return mlat; }
-    public double getLon() { return mlon; }
 
 
 //    public boolean isOnline() {

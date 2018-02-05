@@ -71,12 +71,8 @@ public class BucketListAdapter extends
         BucketItem BucketList = mBucketLists.get(position);
 
         // Set item views based on your views and data model
-<<<<<<< HEAD
         CheckedTextView textView = viewHolder.nameTextView;
         System.out.println(BucketList.getName());
-=======
-        TextView textView = viewHolder.nameTextView;
->>>>>>> master
         textView.setText(BucketList.getName());
 //        if(!BucketList.isOnline()) {
 //            textView.setClickable(false);
