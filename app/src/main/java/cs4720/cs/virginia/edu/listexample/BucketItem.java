@@ -22,6 +22,15 @@ public class BucketItem {
     public String getName() {
         return mName;
     }
+    public String getDescription() {
+        return mDescription;
+    }
+    public double getLat() {
+        return mlat;
+    }
+    public double getLon() {
+        return mlon;
+    }
     public Date getDate() {
         return mdueDate;
     }

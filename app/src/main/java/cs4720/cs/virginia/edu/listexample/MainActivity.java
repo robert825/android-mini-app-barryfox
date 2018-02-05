@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.design.widget.FloatingActionButton;
-
+import android.view.ViewGroup;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import android.app.Activity;
 import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
-    //public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     ArrayList<BucketItem> BucketList;
     EditText nameField;
     RecyclerView rvBucketLists;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(message[0]);
             System.out.println(message[3]);
             System.out.println(message[4]);
-            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), dateFromString(message[4]));
+            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), new Date((Long.parseLong(message[4]))));
             BucketList.add(b);
         } catch (NullPointerException n) {
             System.out.println("Error");
@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("INSIDE DATE THING" + date);
         try {
             SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
-            Date date1 = format.parse(date);
+            Date date1;
+            date1 = format.parse(date);
             return date1;
         } catch (ParseException e) {
             return null;
@@ -100,20 +101,36 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Called tapping on an online BucketList
-    public void sendMessage(View view) {
-        TextView currentItem = (TextView)view;
-        Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
-        // Make Toast
-        Toast.makeText(this, "Sending message to " + currentItem.getText().toString(), Toast.LENGTH_LONG).show();
-    }
 
-    public void toggle_checked(View view) {
-        CheckedTextView currentItem = (CheckedTextView)view;
-        //Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
-        // Make Toast
-        Toast.makeText(this, "Congrats! You completed an activity " , Toast.LENGTH_LONG).show();
-//        if (!currentItem.isChecked()){
-//            currentItem.setCheckMarkDrawable();
+
+    public void goToEditPage(View view) {
+        System.out.println("CURRENT VIEW" + view.toString());
+        // Toast.makeText(this, "Congrats! You completed an activity " , Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
+        /*****We will need to change the following line*****/
+        View parent = (View) findViewById(R.id.parent);
+        int indexOfView = ((ViewGroup) view.getParent()).indexOfChild(view);
+
+        int count = ((ViewGroup) view.getParent()).getChildCount();
+        System.out.println("PARENT COUNT" + count);
+//        for (int i = 0; i < count; i++) {
+//            View child = ((ViewGroup) view.getParent()).getChildAt(i);
+//
+//            if (child == view) {
+//                indexOfView = i;
+//            }
+//
 //        }
+
+
+        String name = BucketList.get(indexOfView).getName();
+        String description = BucketList.get(indexOfView).getDescription();
+        String lat = Double.toString(BucketList.get(indexOfView).getLat());
+        String lon = Double.toString(BucketList.get(indexOfView).getLon());
+        String date = new Long(BucketList.get(indexOfView).getDate().getTime()).toString();
+
+        String[] messageName = {name, description, lat, lon, date};
+        intent.putExtra(EXTRA_MESSAGE, messageName);
+        startActivity(intent);
     }
 }

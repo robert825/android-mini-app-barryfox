@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 // Create the basic adapter extending from RecyclerView.Adapter
@@ -21,6 +23,7 @@ public class BucketListAdapter extends
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public CheckedTextView nameTextView;
+        public TextView dateView;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
@@ -30,6 +33,7 @@ public class BucketListAdapter extends
             super(itemView);
 
             nameTextView = (CheckedTextView) itemView.findViewById(R.id.BucketList_name);
+            dateView = (TextView) itemView.findViewById(R.id.date);
 
         }
     }
@@ -72,8 +76,11 @@ public class BucketListAdapter extends
 
         // Set item views based on your views and data model
         CheckedTextView textView = viewHolder.nameTextView;
+        TextView dateDisplay = viewHolder.dateView;
+
         System.out.println(BucketList.getName());
         textView.setText(BucketList.getName());
+        dateDisplay.setText(BucketList.getDate().toString());
 //        if(!BucketList.isOnline()) {
 //            textView.setClickable(false);
 //            textView.setActivated(false);
