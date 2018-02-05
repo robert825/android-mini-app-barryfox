@@ -13,10 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.design.widget.FloatingActionButton;
+
+import java.text.ParseException;
 import java.util.Date;
 import java.util.ArrayList;
 import android.content.Intent;
 import android.app.Activity;
+import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
     //public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -40,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
             String[] message = intent.getStringArrayExtra(AddActivity.EXTRA_MESSAGE);
             System.out.println(message[0]);
             System.out.println(message[3]);
-            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), new Date(1220227200));
+            System.out.println(message[4]);
+            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), dateFromString(message[4]));
             BucketList.add(b);
         } catch (NullPointerException n) {
             System.out.println("Error");
@@ -81,6 +85,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, AddActivity.class);
         startActivity(intent);
 
+    }
+
+    public Date dateFromString(String date){
+        System.out.println("INSIDE DATE THING" + date);
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
+            Date date1 = format.parse(date);
+            return date1;
+        } catch (ParseException e) {
+            return null;
+        }
     }
 
 
