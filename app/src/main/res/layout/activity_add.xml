@@ -83,7 +83,7 @@
         android:padding="16dp"
         android:text="Longitude"
         android:layout_below="@id/latitude"
-        android:id="@+id/textview4"
+        android:id="@+id/date"
         android:gravity="start" />
 
     <EditText
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:layout_below="@id/textview4"
+        android:layout_below="@id/date"
         android:id="@+id/longitude" />
 
     <CalendarView
