@@ -7,11 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-<<<<<<< HEAD
 import android.view.ViewParent;
 import android.widget.CheckedTextView;
-=======
->>>>>>> master
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
