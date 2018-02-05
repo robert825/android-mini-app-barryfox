@@ -10,9 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cs4720.cs.virginia.edu.listexample.MainActivity"
     android:focusable="true"
+    android:name=".MainActivity"
     android:focusableInTouchMode="true">
 
-
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/my_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:elevation="4dp"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,12 +55,18 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="200dp"
         android:layout_marginBottom="400dp"
+=======
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/rvBucketLists"
+>>>>>>> master
         android:clickable="true"
-        android:onClick="addBucketList"
+        android:onClick="goToAddPage"
+
         app:srcCompat="@android:drawable/ic_input_add" />
 
 

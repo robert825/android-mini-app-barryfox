@@ -15,7 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".AddItemActivity"></activity>
+=======
+        <activity android:name=".AddItemActivity">
+            android:parentActivityName=".TheActivityThatCalledThisOne">
+        </activity>
+        <activity android:name=".EditItemActivity"></activity>
+>>>>>>> master
     </application>
 
 </manifest>

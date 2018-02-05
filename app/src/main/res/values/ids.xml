@@ -3,4 +3,5 @@
     <item name="fab" type="id" />
     <item name="BucketList_name" type="id" />
     <item name="rvBucketLists" type="id" />
+    <item name="floatingActionButton" type="id" />
 </resources>
