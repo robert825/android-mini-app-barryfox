@@ -24,7 +24,6 @@ public class AddActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     public String final_date;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,16 +31,18 @@ public class AddActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-//        CalendarView calendar = (CalendarView) findViewById(R.id.calendarView);
-//
-//        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-//            @Override
-//            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-//                String date = (i1 + 1) + "/" + i2 + "/" + i;
-//                Log.d("DATE", date);
-//                final_date = date;
-//            }
-//        });
+        CalendarView calendar = (CalendarView) findViewById(R.id.calendarView);
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month,
+                                            int dayOfMonth) {
+                int correctMonth = month + 1;
+                String date = correctMonth + "/" + dayOfMonth+ "/" +year;
+                Log.d("DATE", date);
+                final_date = date;
+            }
+        });
 //
 //
     }
@@ -57,10 +58,9 @@ public class AddActivity extends AppCompatActivity {
         String dateString = Long.toString(calendar.getDate());
 
 
-        String[] messageName = {name.getText().toString(), description.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), dateString};
+        String[] messageName = {name.getText().toString(), description.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), final_date};
         intent.putExtra(EXTRA_MESSAGE, messageName);
         startActivity(intent);
     }
 }
-
 

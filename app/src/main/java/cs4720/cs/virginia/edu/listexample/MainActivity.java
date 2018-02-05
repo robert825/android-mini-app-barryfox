@@ -20,10 +20,11 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.app.Activity;
 import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-    ArrayList<BucketItem> BucketList;
+    static ArrayList<BucketItem> BucketList = BucketItem.createInitialBucketList();
     EditText nameField;
     RecyclerView rvBucketLists;
 
@@ -37,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         nameField = (EditText)findViewById(R.id.personName);
 //
 //        // Initialize BucketLists
-        BucketList = BucketItem.createInitialBucketList();
+
         Intent intent = getIntent();
         try {
             String[] message = intent.getStringArrayExtra(AddActivity.EXTRA_MESSAGE);
             System.out.println(message[0]);
             System.out.println(message[3]);
             System.out.println(message[4]);
-            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), new Date((Long.parseLong(message[4]))));
+            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), dateFromString(message[4]));
             BucketList.add(b);
         } catch (NullPointerException n) {
             System.out.println("Error");
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         rvBucketLists.setLayoutManager(new LinearLayoutManager(this));
 //        // That's all!
 //
+
+        Collections.sort(BucketList, new CustomComparator());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
     }
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     public Date dateFromString(String date){
         System.out.println("INSIDE DATE THING" + date);
         try {
-            SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
+            SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
             Date date1;
             date1 = format.parse(date);
             return date1;
@@ -133,4 +136,19 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, messageName);
         startActivity(intent);
     }
+
+
+
+
+    public class CustomComparator implements Comparator<BucketItem> {
+        @Override
+        public int compare(BucketItem o1, BucketItem o2) {
+            return o1.getDate().compareTo(o2.getDate());
+        }
+    }
+//    public int compareTo(Date Date1, Date Dat2){
+//        if Date1.
+//
+//    }
+
 }
