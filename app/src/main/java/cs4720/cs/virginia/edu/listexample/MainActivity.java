@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void goToAddPage(View view)
     {
         Intent intent = new Intent(MainActivity.this, AddActivity.class);
