@@ -21,24 +21,24 @@
         <!--android:elevation="4dp"-->
         <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
         <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/personName"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+    <!--<EditText-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:text="Name"-->
+        <!--android:ems="10"-->
+        <!--android:id="@+id/personName"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentStart="true" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Contact"
-        android:id="@+id/addContactButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/rvBucketLists"
-        android:onClick="addBuck"/>
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Add Contact"-->
+        <!--android:id="@+id/addContactButton"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignEnd="@+id/rvBucketLists"-->
+        <!--android:onClick="addBuck"/>-->
 
 
 
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/addContactButton"
+
 
         />
 

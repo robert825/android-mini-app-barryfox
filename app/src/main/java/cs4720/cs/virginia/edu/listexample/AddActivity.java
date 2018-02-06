@@ -23,7 +23,7 @@ public class AddActivity extends AppCompatActivity {
     }
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-    public String final_date;
+    public String final_date = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
