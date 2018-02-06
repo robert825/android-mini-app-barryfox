@@ -20,11 +20,12 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.app.Activity;
 import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-    ArrayList<BucketItem> BucketList;
-    EditText nameField;
+    static ArrayList<BucketItem> BucketList = BucketItem.createInitialBucketList();
+//    EditText nameField;
     RecyclerView rvBucketLists;
 
     @Override
@@ -34,20 +35,27 @@ public class MainActivity extends AppCompatActivity {
 //
 //        // Lookup the recyclerview in activity layout
         rvBucketLists = (RecyclerView) findViewById(R.id.rvBucketLists);
-        nameField = (EditText)findViewById(R.id.personName);
+
 //
 //        // Initialize BucketLists
-        BucketList = BucketItem.createInitialBucketList();
+
         Intent intent = getIntent();
         try {
             String[] message = intent.getStringArrayExtra(AddActivity.EXTRA_MESSAGE);
-            System.out.println(message[0]);
-            System.out.println(message[3]);
-            System.out.println(message[4]);
-            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), new Date((Long.parseLong(message[4]))));
+
+            BucketItem b = new BucketItem(message[0], message[1], Double.parseDouble(message[2]), Double.parseDouble(message[3]), dateFromString(message[4]), false);
             BucketList.add(b);
         } catch (NullPointerException n) {
             System.out.println("Error");
+        }
+
+        try {
+            String[] message2 = intent.getStringArrayExtra(EditItemActivity.EXTRA_MESSAGE);
+            System.out.println("NEW NAME" + message2[0]);
+            BucketItem b = new BucketItem(message2[0], message2[1], Double.parseDouble(message2[2]), Double.parseDouble(message2[3]), dateFromString(message2[4]), Boolean.parseBoolean(message2[5]));
+            BucketList.set(Integer.parseInt(message2[5]), b);
+        } catch (NullPointerException n) {
+            System.out.println("Edit Error!");
         }
 
 //        // Create adapter passing in the sample user data
@@ -60,24 +68,26 @@ public class MainActivity extends AppCompatActivity {
         rvBucketLists.setLayoutManager(new LinearLayoutManager(this));
 //        // That's all!
 //
+
+        Collections.sort(BucketList, new CustomComparator());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
     }
 
     // Called when you tap the Add BucketList button
-    public void addBucketList(View view) {
-        // Make sure it is a name
-        if(nameField.getText().toString() != null && !nameField.getText().toString().equals("")) {
-            // Log the action
-            Log.d("ListExample", "addBucketList " + nameField.getText().toString());
-            // Make a new BucketList
-            BucketList.add(new BucketItem(nameField.getText().toString(), "description coming soon", 0.0, 0.1, new Date(1220227200)));
-            // Get the adapter that manages the data set and let it know something new was added
-            rvBucketLists.getAdapter().notifyDataSetChanged();
-            // Blank the name field
-            nameField.setText("");
-        }
-    }
+//    public void addBucketList(View view) {
+//        // Make sure it is a name
+//        if(nameField.getText().toString() != null && !nameField.getText().toString().equals("")) {
+//            // Log the action
+//            Log.d("ListExample", "addBucketList " + nameField.getText().toString());
+//            // Make a new BucketList
+//            BucketList.add(new BucketItem(nameField.getText().toString(), "description coming soon", 0.0, 0.1, new Date(1220227200)));
+//            // Get the adapter that manages the data set and let it know something new was added
+//            rvBucketLists.getAdapter().notifyDataSetChanged();
+//            // Blank the name field
+//            nameField.setText("");
+//        }
+//    }
 
 
     public void goToAddPage(View view)
@@ -90,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public Date dateFromString(String date){
         System.out.println("INSIDE DATE THING" + date);
         try {
-            SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
+            SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
             Date date1;
             date1 = format.parse(date);
             return date1;
@@ -133,4 +143,22 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, messageName);
         startActivity(intent);
     }
+
+
+
+
+    public class CustomComparator implements Comparator<BucketItem> {
+        @Override
+        public int compare(BucketItem o1, BucketItem o2) {
+            final int checkedOrNot = Boolean.compare(o1.getChecked(), o2.getChecked());
+            if (checkedOrNot != 0)
+                return checkedOrNot;
+            return o1.getDate().compareTo(o2.getDate());
+        }
+    }
+//    public int compareTo(Date Date1, Date Dat2){
+//        if Date1.
+//
+//    }
+
 }
