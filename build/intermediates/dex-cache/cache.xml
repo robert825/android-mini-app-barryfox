@@ -1,2 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/design/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-design-24.2.0_d4edadde93c65024f63f74c7a4d21f35672bdecb.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_fd914edecd4f9c8b6ad80a17cbacd7b31783d039.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-24.2.0_1fc028b061f5dcb21a3ccf5ef7e4f44324bc84b3.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-24.2.0_9830f2591ff7eaa97d1b0e1893a1322e55746ad0.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_8b972ce575a3754b09abf5aeaa2a6f20b47abd26.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.0.2/b9cd8fc6bd15cb915735d34535db30ece0c44603/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/constraint-layout-solver-1.0.2_595727b980b700c3242912433fbfb1d598108ecc.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.2.0/6be858a75633b1f0a2d24cad740db57775cb6871/support-annotations-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/support-annotations-24.2.0_e23b2d27321271d45d619b2ba6741979e4dd3ea8.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support.constraint-constraint-layout-1.0.2_9233979ab709dbfedf54067f96223e0aacda6bc9.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-24.2.0_99766baa366668e7e2ecddf47a62503e375eb4a8.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_e1ba95cddeb0f623b44b6e035fd19651e3bdc35b.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-24.2.0_e61aff37519c9e30ffa3e1ede10a2980533e50d2.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-24.2.0_1f5ebd94e95b19e7f2428500ed4f957c9cf9cf6f.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-24.2.0_f0c7b0d7a588b35389fb73d217dd012ee0a5c41a.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-24.2.0_a7f869dde8bd90088b0e7f33af5498b0ce32348c.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-24.2.0_08f4748cf2141bf118c214eec72d92c6d26c6665.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_6d52f152e5c26c6586eb8b2808be562fa68aa323.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-24.2.0_53084277b99cac27df2b43f82069f94da4274107.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-24.2.0_188a1ca0e5df9d1cd268a2f6cbdb2ed4e6746176.jar" />
+    </item>
+    <item
+        jar="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/Users/justinbarry/AndroidStudioProjects/android-mini-app-barryfox/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_365432210fa8620265a768aa13c1703b5cf655ea.jar" />
+    </item>
+
+</items>
